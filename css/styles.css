@@ -48,7 +48,7 @@ canvas{
 article {
   position: absolute;
   width: 100vw;
-  height: 300vh;
+  height: 750vh;
   top: 0;
   left: 0;
   background: blue;
@@ -75,9 +75,10 @@ article {
   height: 100%;
   /* background: black; */
   background: white;
-  overflow: scroll;
+  /* overflow: scroll; */
   /* color:white; */
   color: black;
+  overflow: visible;
 }
 
 #rightPage {
@@ -273,6 +274,8 @@ article {
 
 
 /*-----------------------------------------------------HOMEPAGE----------------------------------------------------------*/
+/*WHO IS?*/
+
 #whois{
   opacity: 0;
   width: 100%;
@@ -286,6 +289,172 @@ article {
   /* font-weight: lighter; */
 }
 
+
+/*SKILLS*/
+
+#skills{
+  /* display: none; */
+  width:100%;
+  /* background: red; */
+  text-align: center;
+}
+
+#skills h2{
+  border-top:1px solid black;
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+
+#skills ul{
+  width: 90%;
+  padding: 0 20px;
+  /* background: grey; */
+}
+
+#skills ul li{
+  margin: auto;
+  /* display: inline-block; */
+
+  /* height:64px; */
+  /* padding: 10px; */
+  list-style: none;
+  /* float: left; */
+  /* text-align: center; */
+  /* background: grey; */
+  /* border: 1px solid black; */
+  overflow: hidden;
+}
+
+#skills ul li img{
+  /* max-width: ; */
+  max-width: 40vw;
+
+  vertical-align: middle;
+  padding: 10px;
+  margin: -5px 0 0 -10px; /*temporarily for the nounprojects with credits*/
+}
+
+/*CONTACT*/
+
+/*-----------------------------EmailFORM--------------------------------------*/
+
+#contact {
+  /* display: none; */
+  /* position: absolute; */
+  z-index: 13;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  /*background: rgba(255,255,255,1);*/
+  /*background: rgba(0,0,0,1);*/
+  /* color: white; */
+  margin: 0;
+  padding: 0;
+  /* overflow: scroll; */
+  /*-webkit-overflow-scrolling:touch;*/
+}
+
+#contact h2{
+  border-top:1px solid black;
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+
+.emailForm {
+  margin: 20px auto;
+  width: 75%;
+  text-align: left;
+}
+
+.emailForm input[type='text'] {
+  display: block;
+  width: 100%;
+  max-width: 450px;
+  margin: 10px auto 0px auto;
+  padding: 10px;
+  /* border: none; */
+  font-size: 1em;
+  transition: all .25s ease-in-out;
+  -webkit-transition: all .25s ease-in-out;
+  -moz-transition: all .25s ease-in-out;
+  /* outline: none; */
+  /* border: 1px solid transparent; */
+  /*font-family: 'Droid Serif', serif;*/
+  /* font-family: 'Sedgwick Ave', cursive; */
+  /* background: black; */
+}
+
+
+/*
+ @media screen and (orientation:portrait) {
+  .emailForm input[type='text'] {
+    margin: 10px auto;
+  }
+}*/
+
+.emailForm input:focus {
+  border: 1px solid #382549;
+}
+
+.emailForm p {
+  display: block;
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto 0px auto;
+  padding: 0;
+  border: none;
+  font-size: 1em;
+  transition: all .25s ease-in-out;
+  -webkit-transition: all .25s ease-in-out;
+  -moz-transition: all .25s ease-in-out;
+  outline: none;
+  border: 1px solid transparent;
+}
+
+.emailForm textarea {
+  width: 100%;
+  height: 10em;
+  border: 2px inset rgba(233, 233, 233, 1);
+  font-size: 1em;
+  padding: 10px;
+  /*font-family: 'Droid Serif', serif;*/
+  /* font-family: 'Sedgwick Ave', cursive; */
+}
+
+.emailForm textarea:focus {
+  outline: none;
+  border: 2px inset rgba(180, 180, 180, 1);
+}
+
+.sendbtn {
+  width: 100%;
+  max-width: 450px;
+  margin: auto;
+  /*text-align: left;*/
+}
+
+.emailForm input[type='submit'] {
+  position: relative;
+  font-size: 1em;
+  width: 25%;
+  line-height: 20px;
+  max-width: 136px;
+  margin: 0;
+  padding: 5px 0 0 0;
+  background: black;
+  color: white;
+  font-weight: bold;
+  /*border:1px solid white;*/
+}
+
+.closeresponse:hover {
+  cursor: pointer;
+}
+
+
+
+
+/*LOGOBAR BOTTOM*/
 
 @font-face {
     font-family: universe;
