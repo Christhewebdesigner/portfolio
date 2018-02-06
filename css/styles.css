@@ -1,0 +1,318 @@
+body {
+  font-size: 100%;
+  background-size: 100%;
+  font-family: 'Cairo', sans-serif;
+  margin: 0;
+  padding: 0;
+  /* width: 100vw; */
+  /* height: 100vh; */
+  /* overflow-x: hidden; */
+  /* overflow: hidden; */
+}
+
+/*--------------------------------------------MENU ICON BY HTML5 CANVAS--------------------------------------------*/
+
+#menuIcon{
+  opacity: 0;
+  position: fixed;
+
+  /* opacity: 0; */
+  /* overflow: hidden; */
+}
+
+canvas{
+  /* width:100px; */
+  /* height:100px; */
+  /* border:1px solid black; */
+  /* position: fixed; */
+  /* top:10px; */
+  /* left:10px; */
+  /* opacity: 0.75 */
+  /* -webkit-transform: scale(2); */
+}
+
+/*--------------------------------------------LEFT TOP SIDE BY HTML5 CANVAS--------------------------------------------*/
+
+#leftTop{
+  display: none;
+  position: absolute;
+  width: 50%;
+  height: 265px;
+  left:0;
+  /* margin: 0;
+  padding: 0; */
+  /* background: red; */
+}
+/*--------------------------------------------PAGE SLIDE TEST--------------------------------------------*/
+
+article {
+  position: absolute;
+  width: 100vw;
+  height: 300vh;
+  top: 0;
+  left: 0;
+  background: blue;
+  overflow: hidden;
+}
+
+#leftPage {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: -100vw;
+  width: 100vw;
+  height: 100%;
+  background: yellow;
+  overflow: scroll;
+}
+
+#homePage {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  /* background: black; */
+  background: white;
+  overflow: scroll;
+  /* color:white; */
+  color: black;
+}
+
+#rightPage {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 100vw;
+  width: 100vw;
+  height: 100%;
+  background: red;
+}
+
+.showRightPage {
+  -webkit-transform: translateX(-100vw);
+  transition: ease all 1s;
+}
+
+.showHomePage {
+  -webkit-transform: translateX(0);
+  transition: ease all 1s;
+}
+
+.showLeftPage {
+  -webkit-transform: translateX(100vw);
+  transition: ease all 1s;
+}
+
+
+/*--------------------------------------------SCROLLTEST--------------------------------------------*/
+
+#scrollDing {
+  position: relative;
+  margin-top: 1500px;
+  z-index: 111;
+  width: 25px;
+  height: 25px;
+  background: red;
+}
+
+
+/*--------------------------------------------SCROLLTEST--------------------------------------------*/
+
+#squareBig {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  /* background: red; */
+  margin: 125px auto 0 auto;
+  -webkit-transform: rotate(45deg) scale(0.9);
+  /* -moz-transform: rotate(45deg) scale(0.9); */
+  /* -ms-transform: rotate(45deg) scale(0.9); */
+  /* -o-transform: rotate(45deg) scale(0.9); */
+  /* transform: rotate(45deg) scale(0.9); */
+  overflow: hidden;
+}
+
+#squareBig:before {
+  /* display: none; */
+  content: "";
+  position: absolute;
+  /* left: -22.5%; */
+  /* top: -22.5%; */
+  left: -22.5%;
+  top: -22.5%;
+
+  width: 350px;
+  height: 350px;
+  z-index: -1;
+  background: url("../portfolio/42a449639a6ae8af7e9eae9f779dcdde--population-dolphins.jpg") no-repeat;
+  border: 1px solid blue;
+  background-size: 100%;
+  background-position: center -5px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.squareLittle {
+  position: absolute;
+  width: 118px ; /*120px - 2px (excluding the border)*/
+  height: 118px ; /*120px - 2px (excluding the border)*/
+  /* background:  rgba(107,122,153,0.8); */
+  background: rgba(0, 0, 0, 0.5);
+  /* background:yellow; */
+  /* background: rgba(255,255,255,0.25); */
+  text-align: center;
+  border: 1px solid white;
+  overflow: hidden;
+}
+
+.squareLittle:not(:first-child):before {
+  /* display: none; */
+  content: "image";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  z-index: -1;
+  background: url("../portfolio/42a449639a6ae8af7e9eae9f779dcdde--population-dolphins.jpg") no-repeat;
+  /* background: rgba(255,255,255,0.2); */
+  background-size: 100%;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.squareLittle:not(:first-child):hover {
+  background: none;
+  transition: ease all 0.5s;
+  /* border: 1px solid white; */
+  cursor: pointer;
+}
+
+
+/*  SQUARES WITHOUT SKEW?? (but look like it)*/
+
+.squareLittle:first-child {
+  top: 0;
+  left: 0;
+  background: none;
+  border: none;
+}
+
+.squareLittle:first-child:before {}
+
+.squareLittle:nth-child(2) {
+  bottom: 0;
+  left: 0;
+  /* border-top: none; */
+}
+
+.squareLittle:nth-child(2):before {
+  right: -177px;
+  /*half of the squareBig + 2px border blue of #squareBig:before*/
+  top: -177px;
+  /*half of the squareBig + 2px border blue of #squareBig:before*/
+}
+
+.squareLittle:nth-child(3) {
+  top: 0;
+  right: 0;
+  /* border-left: none; */
+}
+
+.squareLittle:nth-child(3):before {
+  /* background-position: right right; */
+  left: -177px;
+  /*half of the squareBig + 2px border blue of #squareBig:before*/
+  top: -57px;
+  /*no theories here*/
+}
+
+.squareLittle:nth-child(4) {
+  bottom: 0;
+  right: 0;
+  border-top: none;
+  border-left: none;
+}
+
+.squareLittle:nth-child(4):before {
+  /* background-position: center bottom; */
+  left: -177px;
+  /*half of the squareBig + 2px border blue of #squareBig:before*/
+  top: -177px;
+  /*half of the squareBig + 2px border blue of #squareBig:before*/
+}
+
+.squareLittle p {
+  position: absolute;
+  /* top: 20%; */
+  /* left: 35%; */
+  color: lightgray;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  /* background: red; */
+  width: 118px; /* 200px seems to take it to the exact middle of the squareLittle, 118px (squareLittle) slightly above so the text is centered*/
+  height: 118px; /* 200px seems to take it to the exact middle of the squareLittle, 118px (squareLittle) slightly above so the text is centered*/
+  /* margin: auto; */
+  text-align: center;
+  top: 25%;
+  left: 25%;
+  padding: 0;
+  margin: 0;
+
+  font-size: 1.1em;
+}
+
+
+/*-----------------------------------------------------HOMEPAGE----------------------------------------------------------*/
+#whois{
+  opacity: 0;
+  width: 100%;
+  height: auto;
+  margin-top: 190px;
+}
+
+#whois h1, #whois p{
+  padding: 0 20px;
+  text-align: center;
+  /* font-weight: lighter; */
+}
+
+
+@font-face {
+    font-family: universe;
+    src: url(../fonts/Universe.ttf);
+}
+
+#logobar{
+  position: fixed;
+  /* top:0; */
+  bottom: 0;
+  width:100vw;
+  height: 50px;
+
+  font-family: universe;
+
+  background: white;
+  color:black;
+  text-align: center;
+}
+
+#logobar p{
+  position: absolute;
+  top:14px;
+  left:12.5vw;
+  width:75vw;
+  font-size: 1.5em;
+  margin:0;
+  padding: 0;
+  font-weight: bold
+}

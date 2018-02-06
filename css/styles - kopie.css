@@ -1,0 +1,100 @@
+body {
+  font-size: 100%;
+  /*background-image: url("../portfolio/3-2-blue-gradient.jpg");*/
+  background-size: 100%;
+  background: black;
+  /*font-family: 'Vollkorn SC', serif;*/
+  /*font-family: 'Barlow Semi Condensed', sans-serif;*/
+  /*font-family: 'Rokkitt', serif;*/
+  font-family: 'Cairo', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#intro{
+  position: absolute;
+  width: 75%;
+  height: 75vh;
+  left:0 ;
+  /*background: blue;*/
+}
+
+.upper{
+  position: absolute;
+  width: 100%;
+  height: 41.5%;
+  top: 0;
+  background: white;
+}
+
+.lower{
+  position: absolute;
+  width: 100%;
+  height: 58.5%;
+  bottom: 0;
+  background: #232429;
+}
+
+#sideRight{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#cover{
+  display: none;
+  position: absolute;
+  z-index: 1;
+  width: 65%;
+  height: 100vh;
+  background: black;
+}
+
+#cover h1{
+  font-size: 2em;
+  font-weight: lighter;
+  color: white;
+}
+
+#sideRightImg{
+  position: absolute;
+  right:0;
+  width: 25%;
+  height: 100vh;
+  /*background: red;*/
+  overflow: hidden;
+}
+
+#sideRightImg img{
+  position: absolute;
+  width:  200%;
+  right: -100%;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+ filter: grayscale(100%);
+
+ /*-moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);*/
+}
+
+#sideRightVignette{
+  position: absolute;
+  z-index: 2;
+  right: 75px;
+  /*right: 125px;*/
+  width: 25%;
+  height: 100vh;
+  /*background: blue;*/
+  box-shadow: 0 0 400px rgba(0,0,0,0.9) inset;
+  -webkit-transform: rotate(45deg);
+}
+
+#portfolio{
+  position: absolute;
+  width: 100%;
+  height: 25vh;
+  bottom: 0;
+  background: rgba(255,255,255,0.25);
+}
