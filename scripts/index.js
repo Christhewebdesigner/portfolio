@@ -168,6 +168,10 @@ $(document).ready(function() {
 
       //PAGE SLIDE SETTINGS
 
+      //temporary
+      $('#leftPage, #homePage, #rightPage').addClass('showRightPage');
+      $('#leftPage, #homePage, #rightPage').removeClass('showHomePage');
+
       $('#homePage').on("swipeleft", function() {
         $('#leftPage, #homePage, #rightPage').addClass('showRightPage');
         $('#leftPage, #homePage, #rightPage').removeClass('showHomePage');
@@ -237,7 +241,7 @@ $(document).ready(function() {
                   $('.squareLittle:nth-child(4)').animate({'bottom': '-' + st, 'opacity' : opMin}, 0);
 
                   $('#menuIcon').animate({'opacity' : opPlus}, 0);
-                  $('#logobar').animate({'opacity' : opMin}, 0);                  
+                  $('#logobar').animate({'opacity' : opMin}, 0);
                   $('#whois').animate({'opacity' : opPlus, 'marginTop' :  marginInfo}, 0);
 
 

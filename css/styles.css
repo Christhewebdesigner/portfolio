@@ -51,7 +51,7 @@ article {
   height: 750vh;
   top: 0;
   left: 0;
-  background: blue;
+  /* background: blue; */
   overflow: hidden;
 }
 
@@ -88,7 +88,7 @@ article {
   left: 100vw;
   width: 100vw;
   height: 100%;
-  background: red;
+  /* background: red; */
 }
 
 .showRightPage {
@@ -484,4 +484,104 @@ article {
   margin:0;
   padding: 0;
   font-weight: bold
+}
+
+
+/*---------------------------------------------------------------------------RIGHTPAGE/PORTFOLIO---------------------------------------------------------------------------*/
+
+.website{
+  width:100%;
+}
+
+#amik{
+
+}
+
+#euretos{
+
+}
+
+#woodshop{
+
+}
+
+#celine{
+
+}
+
+.website__intro{
+}
+
+.intro__images{
+
+}
+
+.images__desktop{
+  position: relative;
+  width: 100vw;
+  height:250px;
+  margin: 0;
+  padding: 0;
+  /* background: blue; */
+  /* overflow: hidden; */
+}
+
+.desktop__template{
+  position: absolute;
+  left: 5vw;
+  width: 90vw;
+  /* background: grey; */
+}
+
+.template_box{
+  /* display: none; */
+  position: absolute;
+  top: 3.25vw;
+  left: 16.25vw;
+  width: 67.5vw;
+  height:42.25vw;
+  /* background: yellow; */
+  overflow: hidden;
+}
+
+.box__scrollbox{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 67.5vw;
+  height:42.25vw;
+  /* background: yellow; */
+  overflow-y: scroll;
+  padding-right:17px; /* Increase/decrease this value for cross-browser compatibility */
+}
+
+.box__img{
+  /* display: none; */
+  position: absolute;
+  width:67.5vw;
+}
+
+
+.images__mobile{
+
+}
+
+.images__mobile img{
+  width: 25vw;
+}
+
+.intro__text{
+
+}
+
+.website__description{
+
+}
+
+.description__images{
+
+}
+
+.description_text{
+
 }
