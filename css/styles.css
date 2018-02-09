@@ -493,23 +493,8 @@ article {
   width:100%;
 }
 
-#amik{
-
-}
-
-#euretos{
-
-}
-
-#woodshop{
-
-}
-
-#celine{
-
-}
-
 .website__intro{
+
 }
 
 .intro__images{
@@ -533,7 +518,7 @@ article {
   /* background: grey; */
 }
 
-.template_box{
+.desktop__template-box{
   /* display: none; */
   position: absolute;
   top: 3.25vw;
@@ -544,18 +529,18 @@ article {
   overflow: hidden;
 }
 
-.box__scrollbox{
+.desktop__template--scrollbox{
   position: absolute;
   top: 0;
   left: 0;
-  width: 67.5vw;
-  height:42.25vw;
+  width: inherit;
+  height: inherit;
   /* background: yellow; */
   overflow-y: scroll;
   padding-right:17px; /* Increase/decrease this value for cross-browser compatibility */
 }
 
-.box__img{
+.desktop--scrollbox__img{
   /* display: none; */
   position: absolute;
   width:67.5vw;
@@ -563,11 +548,51 @@ article {
 
 
 .images__mobile{
-
+  position: absolute;
+  top: 15vw;
+  right: 10px;
+  width: 100vw;
+  height:250px;
+  /* margin: 0; */
+  /* padding: 0; */
+  /* background: red; */
 }
 
-.images__mobile img{
-  width: 25vw;
+.mobile__template{
+  position: absolute;
+  z-index: 1;
+  left: 75vw;
+  width: 20vw;
+}
+
+.mobile__template-box{
+  /* display: none; */
+  position: absolute;
+  z-index: 2;
+  top: 1vw;
+  left: 76.25vw;
+  width: 17.5vw;
+  height:38vw;
+  /* background: black; */
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+.mobile__template--scrollbox{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  background: black;
+  overflow-y: scroll;
+  padding-right:17px; /* Increase/decrease this value for cross-browser compatibility */
+}
+.mobile--scrollbox__img{
+  /* display: none; */
+  margin-top: 10px;
+  position: absolute;
+    width: 100%;
 }
 
 .intro__text{
@@ -583,5 +608,5 @@ article {
 }
 
 .description_text{
-
+  padding: 0 20px;
 }
