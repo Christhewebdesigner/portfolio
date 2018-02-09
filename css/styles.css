@@ -13,22 +13,22 @@ body {
 /*--------------------------------------------MENU ICON BY HTML5 CANVAS--------------------------------------------*/
 
 #menuIcon{
-  opacity: 0;
   position: fixed;
-
-  /* opacity: 0; */
+  z-index: 3;
+  opacity: 0;
   /* overflow: hidden; */
 }
 
 canvas{
-  /* width:100px; */
-  /* height:100px; */
+  width:100px;
+  height:50px;
   /* border:1px solid black; */
   /* position: fixed; */
   /* top:10px; */
   /* left:10px; */
   /* opacity: 0.75 */
   /* -webkit-transform: scale(2); */
+  /* background: red; */
 }
 
 /*--------------------------------------------LEFT TOP SIDE BY HTML5 CANVAS--------------------------------------------*/
@@ -79,16 +79,6 @@ article {
   /* color:white; */
   color: black;
   overflow: visible;
-}
-
-#rightPage {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 100vw;
-  width: 100vw;
-  height: 100%;
-  /* background: red; */
 }
 
 .showRightPage {
@@ -148,6 +138,7 @@ article {
   height: 350px;
   z-index: -1;
   background: url("../portfolio/42a449639a6ae8af7e9eae9f779dcdde--population-dolphins.jpg") no-repeat;
+
   border: 1px solid blue;
   background-size: 100%;
   background-position: center -5px;
@@ -179,6 +170,7 @@ article {
   height: 350px;
   z-index: -1;
   background: url("../portfolio/42a449639a6ae8af7e9eae9f779dcdde--population-dolphins.jpg") no-repeat;
+
   /* background: rgba(255,255,255,0.2); */
   background-size: 100%;
   -webkit-transform: rotate(-45deg);
@@ -489,16 +481,112 @@ article {
 
 /*---------------------------------------------------------------------------RIGHTPAGE/PORTFOLIO---------------------------------------------------------------------------*/
 
+
+#rightPage {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 100vw;
+  width: 100vw;
+  height: 100%;
+  /* background: red; */
+
+}
+
 .website{
-  width:100%;
+  position: relative;
+  width: 100%;
+  /* max-width:SOMETHING; */
+  height: 375px;
+  /* background: blue; */
+  margin: 0;
+  padding: 0;
+  /* background: rgba(0,0,0,0.35); */
+  background: rgba(0,0,0,0.9);
+  color: white;
 }
 
 .website__intro{
-
+  position: relative;
+  width: inherit;
+  height: inherit;
 }
 
-.intro__images{
+.intro__image{
+  width: 100%;
+  height: 200px;
+  position: relative;
+  margin-top: -27px;
+  /* background: rgba(0,0,0,0.6); */
+  background: url("../portfolio/2 - circus frontflip_slide.jpg") no-repeat;
+  background-size: 100%;
+  border: 1px solid white;
+  border-bottom: none;
+}
 
+.intro__title{
+  width: 100%;
+  height: 75px;
+  position: relative;
+  z-index: 1;
+  margin-top: 25px;
+  background: rgba(0,0,0,0.8);
+  border: 1px solid white;
+
+  text-align: center;
+}
+
+.intro__text{
+  width: 100%;
+  height: 100px;
+  position: relative;
+ /* top: 175px; */
+  /* background: rgba(0,0,0,0.8); */
+  border: 1px solid white;
+}
+
+.intro--p{
+  padding: 0 20px;
+}
+
+.intro__languages{
+  /* display: none; */
+  position: relative;
+
+  width: 100%;
+  height: 50px;
+  /* background: rgba(128,128,128,0.75); */ /*USEFUL FOR ANOTHER?*/
+  background: black;
+}
+
+.intro__image_square{
+  position: absolute;
+  z-index: 1;
+  /* z-index: 17; */
+  width: 32px;
+  height: 32px;
+  top: 336px;
+  /* bottom: -36px; */
+  left: 40px;
+  /* left: -moz-calc(194px + 100vw / 2);
+  left: -webkit-calc(194px + 100vw / 2);
+  left: -o-calc(194px + 100vw / 2);
+  left: calc(194px + 100vw / 2); */
+  background: rgba(0,0,0,0.8);
+  border: 1px solid white;
+
+  /*color: white;*/
+  text-align: center;
+  /*border-radius: 50%;*/
+  -webkit-transform: rotate(45deg);
+  overflow: hidden;
+}
+
+/*POPUP*/
+.popup{
+  display: none;
+  position: relative;
+  margin-top: 100px;
 }
 
 .images__desktop{
@@ -551,7 +639,7 @@ article {
   position: absolute;
   top: 15vw;
   right: 10px;
-  width: 100vw;
+  width: 25vw;
   height:250px;
   /* margin: 0; */
   /* padding: 0; */
@@ -561,7 +649,7 @@ article {
 .mobile__template{
   position: absolute;
   z-index: 1;
-  left: 75vw;
+  left: 0vw;
   width: 20vw;
 }
 
@@ -570,12 +658,12 @@ article {
   position: absolute;
   z-index: 2;
   top: 1vw;
-  left: 76.25vw;
+  left: 1.25vw;
   width: 17.5vw;
   height:38vw;
   /* background: black; */
   overflow: hidden;
-  border-radius: 25px;
+  border-radius: 10px;
 }
 
 .mobile__template--scrollbox{
@@ -593,10 +681,6 @@ article {
   margin-top: 10px;
   position: absolute;
     width: 100%;
-}
-
-.intro__text{
-
 }
 
 .website__description{

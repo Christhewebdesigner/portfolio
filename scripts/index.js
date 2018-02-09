@@ -6,7 +6,7 @@ $(document).ready(function() {
       var c = icon.getContext('2d');
 
 //MENU ICON
-      c.transform(0.85,0,0,0.85,0,0)
+      c.transform(2.55,0,0,2.55,0,0)
 
       c.beginPath();
       c.moveTo(30, 11);
