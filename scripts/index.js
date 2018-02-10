@@ -168,8 +168,8 @@ $(document).ready(function() {
       //PAGE SLIDE SETTINGS
 
       //temporary
-      $('#leftPage, #homePage, #rightPage').addClass('showRightPage');
-      $('#leftPage, #homePage, #rightPage').removeClass('showHomePage');
+      // $('#leftPage, #homePage, #rightPage').addClass('showRightPage');
+      // $('#leftPage, #homePage, #rightPage').removeClass('showHomePage');
 
       $('#homePage').on("swipeleft", function() {
         $('#leftPage, #homePage, #rightPage').addClass('showRightPage');
@@ -240,7 +240,7 @@ $(document).ready(function() {
                   $('.squareLittle:nth-child(4)').animate({'bottom': '-' + st, 'opacity' : opMin}, 0);
 
                   $('#menuIcon').animate({'opacity' : opPlus}, 0);
-                  $('#logobar').animate({'opacity' : opMin}, 0);
+                  $('.logobar--bottom').animate({'opacity' : opMin}, 0);
                   $('#whois').animate({'opacity' : opPlus, 'marginTop' :  marginInfo}, 0);
 
 
@@ -254,6 +254,11 @@ $(document).ready(function() {
 
                   if(st < 10){
                     $('.squareLittle').css({'border' : '1px solid transparent'});
+
+                    $('.squareLittle').eq(1).css({'border-top' : '1px solid white'});
+                    $('.squareLittle').eq(2).css({'border-left' : '1px solid white'});
+                    $('.squareLittle').eq(3).css({'border-top' : '1px solid white', 'border-left' : '1px solid white'});
+
                   } else{
                       $('.squareLittle').css({'border' : 'none'});
                   }
@@ -266,9 +271,11 @@ $(document).ready(function() {
 
 
       //---------------------------------------------------PORTFOLIO---------------------------------------------------------------
-      $('.intro__more--euretos').click(function(){
-          $('.popup--euretos').removeClass('popup--offScreen');
-          $('.images__mobile').removeClass('mobile--offScreen').css({'right' :  '10px'})
+      $('.intro__more').click(function(){
+          var thisTop = $(this).offset().top;
+          $('html, body').animate({'scrollTop' : thisTop}, 750);
+          $(this).parent().parent().next('.popup').removeClass('popup--offScreen');
+          $('.images__mobile').removeClass('mobile--offScreen').css({'right' :  '10px'});
       });
 
 });

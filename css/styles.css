@@ -6,7 +6,7 @@ body {
   padding: 0;
   /* width: 100vw; */
   /* height: 100vh; */
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
   /* overflow: hidden; */
 }
 
@@ -62,7 +62,7 @@ article {
   left: -100vw;
   width: 100vw;
   height: 100%;
-  background: yellow;
+  /* background: yellow; */
   overflow: scroll;
 }
 
@@ -78,7 +78,7 @@ article {
   /* overflow: scroll; */
   /* color:white; */
   color: black;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .showRightPage {
@@ -137,7 +137,9 @@ article {
   width: 350px;
   height: 350px;
   z-index: -1;
-  background: url("../portfolio/42a449639a6ae8af7e9eae9f779dcdde--population-dolphins.jpg") no-repeat;
+  /* background: url("../portfolio/42a449639a6ae8af7e9eae9f779dcdde--population-dolphins.jpg") no-repeat; */
+  background: url("../portfolio/WP_20170520_16_37_50_Pro_wider_and_bigger_background-clonestamping.jpg") no-repeat;
+
 
   border: 1px solid blue;
   background-size: 100%;
@@ -169,7 +171,8 @@ article {
   width: 350px;
   height: 350px;
   z-index: -1;
-  background: url("../portfolio/42a449639a6ae8af7e9eae9f779dcdde--population-dolphins.jpg") no-repeat;
+  /* background: url("../portfolio/42a449639a6ae8af7e9eae9f779dcdde--population-dolphins.jpg") no-repeat; */
+  background: url("../portfolio/WP_20170520_16_37_50_Pro_wider_and_bigger_background-clonestamping.jpg") no-repeat;
 
   /* background: rgba(255,255,255,0.2); */
   background-size: 100%;
@@ -446,7 +449,7 @@ article {
 
 
 
-/*LOGOBAR BOTTOM*/
+/*LOGOBAR*/
 
 @font-face {
     font-family: universe;
@@ -455,35 +458,37 @@ article {
 
 .logobar{
   position: fixed;
-  /* top:0; */
-  bottom: 0;
-  width:100vw;
-  height: 50px;
+  top: 0;
+  width: 100%;
+  height: 100vh;
 
   font-family: universe;
 
-  background: white;
-  color:black;
+  color: black;
   text-align: center;
 }
 
 .logobar--top{
   top: 0;
+  border-bottom: 1px solid black;
 }
 
 .logobar--bottom{
-  bottom: 0;
+  bottom: 14px;
+
+  /* bottom: 0; */
 }
 
 .logobar p{
-  position: absolute;
-  top:14px;
-  left:12.5vw;
-  width:75vw;
+  width:100vw;
   font-size: 1.5em;
+  font-weight: bold;
+  background: white;
+
+  position: absolute;
+  left:0;
   margin:0;
-  padding: 0;
-  font-weight: bold
+  padding: 7px;
 }
 
 
@@ -498,6 +503,8 @@ article {
   width: 100vw;
   height: 100%;
   /* background: red; */
+  /* background: rgba(0,0,0,0.1); */
+
 }
 
 .website{
@@ -506,7 +513,7 @@ article {
   /* max-width:SOMETHING; */
   height: 425px;
   /* background: blue; */
-  margin: 90px 0 -90px 0;
+  margin: 90px 0 -50px 0;
   padding: 0;
   /* background: rgba(0,0,0,0.35); */
   /* background: rgba(0,0,0,0.9); */
@@ -525,52 +532,57 @@ article {
 
 .intro__title{
   width: 100%;
-  height: 75px;
-  display: table;
+  /* height: 75px; */
+  /* display: table; */
   position: relative;
   z-index: 1;
-  margin-top: 25px;
+  /* margin-top: 25px; */
 
   text-align: center;
 }
 
 .intro__title_h1{
-  display: table-cell;
+  /* display: table-cell; */
   margin: 0;
+  padding: 8px;
   vertical-align: middle;
 }
 
 .intro__title_img{
   height: 30px;
-  padding: 22.5px;
+  padding: 12.5px;
+  vertical-align: middle;
 }
 
 .title--dark{
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.85);
   border: 1px solid white;
   color: white;
+  height:75px
 }
 
 .title--light{
   /* background: rgba(128,128,128,0.15); */
-  background: rgba(0,0,0,0.1);
+  /* background: rgba(0,0,0,0.1); */
 
-  border: 1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
 .intro__image{
   width: 100%;
   height: 200px;
   position: relative;
-  margin-top: -27px;
+  /* margin-top: 0; */
   /* background: rgba(0,0,0,0.6); */
 }
 
 .image--amik{
   background: url("../portfolio/2 - circus frontflip_slide.jpg") no-repeat;
   background-size: 100%;
-  border: 1px solid white;
+  border: 1px   solid white;
   border-bottom: none;
+  margin-top: -27px;
 }
 
 .image--euretos{
@@ -595,16 +607,18 @@ article {
   background: rgba(0,0,0,0.8);
   border: 1px solid white;
   color: white;
+
 }
 
 .text--light{
   background: rgba(255,255,255,0.4);
   border: 1px solid black;
+
 }
 
 .intro__p{
   margin: 0;
-  padding: 10px 10px 25px 10px;
+  padding: 16px 10px 24px 10px;
 }
 
 .intro__text_square{
@@ -661,7 +675,7 @@ article {
 .intro__more-p{
   height: 32px;
   margin: 0;
-  padding: 9px;
+  padding: 12px;
   font-size: 0.9em;
   font-weight: bold;
 }
