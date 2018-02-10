@@ -165,7 +165,6 @@ $(document).ready(function() {
       l.fill();
       // l.stroke();
 
-
       //PAGE SLIDE SETTINGS
 
       //temporary
@@ -262,6 +261,14 @@ $(document).ready(function() {
            lastScrollTop = st;
          }
 
+      });
+
+
+
+      //---------------------------------------------------PORTFOLIO---------------------------------------------------------------
+      $('.intro__more--euretos').click(function(){
+          $('.popup--euretos').removeClass('popup--offScreen');
+          $('.images__mobile').removeClass('mobile--offScreen').css({'right' :  '10px'})
       });
 
 });

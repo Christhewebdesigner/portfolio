@@ -498,16 +498,15 @@ article {
   width: 100vw;
   height: 100%;
   /* background: red; */
-
 }
 
 .website{
   position: relative;
   width: 100%;
   /* max-width:SOMETHING; */
-  height: 450px;
+  height: 425px;
   /* background: blue; */
-  margin: 50px 0 0 0;
+  margin: 90px 0 -90px 0;
   padding: 0;
   /* background: rgba(0,0,0,0.35); */
   /* background: rgba(0,0,0,0.9); */
@@ -521,7 +520,42 @@ article {
 }
 
 .intro--euretos{
-  background: rgba(128,128,128,0.7)
+  /* background: rgba(128,128,128,0.7) */
+}
+
+.intro__title{
+  width: 100%;
+  height: 75px;
+  display: table;
+  position: relative;
+  z-index: 1;
+  margin-top: 25px;
+
+  text-align: center;
+}
+
+.intro__title_h1{
+  display: table-cell;
+  margin: 0;
+  vertical-align: middle;
+}
+
+.intro__title_img{
+  height: 30px;
+  padding: 22.5px;
+}
+
+.title--dark{
+  background: rgba(0,0,0,0.8);
+  border: 1px solid white;
+  color: white;
+}
+
+.title--light{
+  /* background: rgba(128,128,128,0.15); */
+  background: rgba(0,0,0,0.1);
+
+  border: 1px solid black;
 }
 
 .intro__image{
@@ -537,37 +571,16 @@ article {
   background-size: 100%;
   border: 1px solid white;
   border-bottom: none;
-
 }
 
 .image--euretos{
-  background: url("../portfolio/screenshot-euretos.png") no-repeat;
-  background-size: 200%;
-  background-position: 0 -50px;
+  background: url("../portfolio/screenshot-euretos_2.png") no-repeat;
+  /* background: url("../portfolio/Euretos-banner-1500x500.jpg") no-repeat; */
+  background-size: 175%;
+  background-position: -100px -50px;
   border: 1px solid black;
   border-bottom: none;
-}
-
-
-.intro__title{
-  width: 100%;
-  height: 75px;
-  position: relative;
-  z-index: 1;
-  margin-top: 25px;
-
-  text-align: center;
-}
-
-.title--dark{
-  background: rgba(0,0,0,0.8);
-  border: 1px solid white;
-  color: white;
-}
-
-.title--light{
-  background: rgba(255,255,255,0.8);
-  border: 1px solid black;
+  border-top: none;
 }
 
 .intro__text{
@@ -590,7 +603,8 @@ article {
 }
 
 .intro__p{
-  padding: 10px;
+  margin: 0;
+  padding: 10px 10px 25px 10px;
 }
 
 .intro__text_square{
@@ -624,7 +638,7 @@ article {
 }
 
 
-.intro__languages{
+.intro__more{
   /* display: none; */
   position: relative;
   width: 100%;
@@ -633,19 +647,22 @@ article {
   text-align: center;
 }
 
-.intro__languages--dark{
+.intro__more--dark{
   background: rgba(0,0,0,1);
   color: white;
 }
 
-.intro__languages--light{
-  background: rgba(255,255,255,0.75);
+.intro__more--light{
+  /* background: rgba(255,255,255,0.75); */
+  background: rgba(0,0,0,0.1);
+
 }
 
-.intro__languages-p{
+.intro__more-p{
   height: 32px;
   margin: 0;
   padding: 9px;
+  font-size: 0.9em;
   font-weight: bold;
 }
 
@@ -678,9 +695,21 @@ article {
 
 /*POPUP*/
 .popup{
-  display: none;
+  /* display: none; */
   position: relative;
+  width: 100%;
   margin-top: 100px;
+  transition: ease all 1s;
+}
+
+.popup--offScreen{
+  height: 0;
+  overflow: hidden;
+  margin-left: -100%;
+}
+
+.popup--light{
+  /* background: rgba(0,0,0,0.05) */
 }
 
 .images__desktop{
@@ -732,18 +761,23 @@ article {
 .images__mobile{
   position: absolute;
   top: 15vw;
-  right: 10px;
   width: 25vw;
   height:250px;
   /* margin: 0; */
   /* padding: 0; */
   /* background: red; */
+  transition: ease all 1s;
+}
+
+.mobile--offScreen{
+  opacity: 0;
+  right: -250px;
 }
 
 .mobile__template{
   position: absolute;
   z-index: 1;
-  left: 0vw;
+  left: 0;
   width: 20vw;
 }
 
