@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  padding:0;
+}
+
 body {
   font-size: 100%;
   background-size: 100%;
@@ -6,10 +11,9 @@ body {
   padding: 0;
   /* width: 100vw; */
   /* height: 100vh; */
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   /* overflow: hidden; */
 }
-
 /*--------------------------------------------MENU ICON BY HTML5 CANVAS--------------------------------------------*/
 
 #menuIcon{
@@ -137,8 +141,7 @@ article {
   width: 350px;
   height: 350px;
   z-index: -1;
-  /* background: url("../portfolio/42a449639a6ae8af7e9eae9f779dcdde--population-dolphins.jpg") no-repeat; */
-  background: url("../portfolio/WP_20170520_16_37_50_Pro_wider_and_bigger_background-clonestamping.jpg") no-repeat;
+  background: url("../portfolio/42a449639a6ae8af7e9eae9f779dcdde--population-dolphins.jpg") no-repeat;
 
 
   border: 1px solid blue;
@@ -171,8 +174,7 @@ article {
   width: 350px;
   height: 350px;
   z-index: -1;
-  /* background: url("../portfolio/42a449639a6ae8af7e9eae9f779dcdde--population-dolphins.jpg") no-repeat; */
-  background: url("../portfolio/WP_20170520_16_37_50_Pro_wider_and_bigger_background-clonestamping.jpg") no-repeat;
+  background: url("../portfolio/42a449639a6ae8af7e9eae9f779dcdde--population-dolphins.jpg") no-repeat;
 
   /* background: rgba(255,255,255,0.2); */
   background-size: 100%;
@@ -278,7 +280,7 @@ article {
   margin-top: 190px;
 }
 
-#whois h1, #whois p{
+h1, p{
   padding: 0 20px;
   text-align: center;
   /* font-weight: lighter; */
@@ -289,9 +291,14 @@ article {
 
 #skills{
   /* display: none; */
-  width:100%;
+  position: relative;
+  /* float: left; */
+  width: 100%;
+  height: 75vh;
+  margin: 0;
+  padding: 0;
   /* background: red; */
-  text-align: center;
+  /* text-align: center; */
 }
 
 #skills h2{
@@ -301,32 +308,52 @@ article {
 }
 
 #skills ul{
-  width: 90%;
-  padding: 0 20px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
   /* background: grey; */
+  /* text-align: center; */
 }
 
 #skills ul li{
-  margin: auto;
-  /* display: inline-block; */
-
+  display: inline-block;
+  width: 20%;
   /* height:64px; */
   /* padding: 10px; */
   list-style: none;
   /* float: left; */
+  /* margin: 0; */
+  margin: 12px 0 0 10%;
+  padding: 0;
   /* text-align: center; */
   /* background: grey; */
   /* border: 1px solid black; */
-  overflow: hidden;
+  /* overflow: hidden; */
+  /* background: red; */
+  text-align: center;
+}
+
+#skills ul li h3{
+  /* border-top:1px solid black; */
+  /* border-bottom: 1px solid black; */
+  /* margin: 0; */
 }
 
 #skills ul li img{
   /* max-width: ; */
-  max-width: 40vw;
+  width: 100%;
+  max-width: 95px;
 
   vertical-align: middle;
-  padding: 10px;
-  margin: -5px 0 0 -10px; /*temporarily for the nounprojects with credits*/
+  /* padding: 20px; */
+  margin: 0; /*temporarily for the nounprojects with credits*/
+  /* background: blue; */
+}
+
+#skills ul li p{
+  display: none;
 }
 
 /*CONTACT*/
@@ -336,6 +363,7 @@ article {
 #contact {
   /* display: none; */
   /* position: absolute; */
+  position: relative;
   z-index: 13;
   top: 0;
   width: 100%;
@@ -469,12 +497,13 @@ article {
 }
 
 .logobar--top{
+  display: none;
   top: 0;
   border-bottom: 1px solid black;
 }
 
 .logobar--bottom{
-  bottom: 14px;
+  bottom: 60px;
 
   /* bottom: 0; */
 }
@@ -513,7 +542,7 @@ article {
   /* max-width:SOMETHING; */
   height: 425px;
   /* background: blue; */
-  margin: 90px 0 -50px 0;
+  margin: 25px 0 25px 0;
   padding: 0;
   /* background: rgba(0,0,0,0.35); */
   /* background: rgba(0,0,0,0.9); */
@@ -588,8 +617,8 @@ article {
 .image--euretos{
   background: url("../portfolio/screenshot-euretos_2.png") no-repeat;
   /* background: url("../portfolio/Euretos-banner-1500x500.jpg") no-repeat; */
-  background-size: 175%;
-  background-position: -100px -50px;
+  background-size: 150%;
+  background-position: -85px -35px;
   border: 1px solid black;
   border-bottom: none;
   border-top: none;
@@ -710,16 +739,22 @@ article {
 /*POPUP*/
 .popup{
   /* display: none; */
-  position: relative;
+  /* position: relative; */
+  position: fixed;
+  z-index: 3;
+  top:0;
   width: 100%;
-  margin-top: 100px;
+  margin-top: 25px;
   transition: ease all 1s;
+  background: white;
 }
 
 .popup--offScreen{
-  height: 0;
+  display: none;
+  /* height: 0; */
   overflow: hidden;
-  margin-left: -100%;
+  /* margin-top: -100%; */
+  opacity: 0;
 }
 
 .popup--light{
