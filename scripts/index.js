@@ -207,13 +207,13 @@ $(document).ready(function() {
       });
 
       $('.squareLittle').eq(3).click(function(){
-        $('html,body').animate({'scrollTop' : 100}, 750);
+        $('#homePage').animate({'scrollTop' : 100}, 750);
       });
 
 
 
       // SET ELEMENTS RIGHT FOR THE START POSITION OF THE WINDOW //
-      var st = $(window).scrollTop();
+      var st = $('#homePage').scrollTop();
       var op = 1 - (st * 0.01);
       var scaleDown = 0.9 -(st/1000);
       var scrollTransform = 'rotate(45deg) scale(' + scaleDown  + ')';
@@ -242,7 +242,7 @@ $(document).ready(function() {
 
       var lastScrollTop = 0;
 
-      $(window).on("scroll", function(event){
+      $("#homePage").on("scroll", function(event){
          var st = $(this).scrollTop();
          // var op = 1 - (st * 0.01);
          var opMin = 1 - (st * 0.02);
