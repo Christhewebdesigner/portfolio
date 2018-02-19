@@ -165,6 +165,18 @@ $(document).ready(function() {
       l.fill();
       // l.stroke();
 
+      //MENU ICON-CLICK
+
+      $('#menuIcon').click(function(){
+        $('#homePage article').scrollTop(0);
+
+        $('#leftPage, #homePage, #rightPage').addClass('showHomePage');
+        $('#leftPage, #homePage, #rightPage').removeClass('showRightPage');
+        $('#leftPage, #homePage, #rightPage').removeClass('showLeftPage');
+      })
+
+      //---------------------------------------------------ALL PAGES---------------------------------------------------------------
+
       //PAGE SLIDE SETTINGS
 
       //temporary
@@ -201,19 +213,26 @@ $(document).ready(function() {
       // });
 
       //ON CLICK
+      $('.squareLittle').eq(1).click(function(){
+        $('#leftPage, #homePage, #rightPage').addClass('showLeftPage');
+        $('#leftPage, #homePage, #rightPage').removeClass('showHomePage');
+      });
+
       $('.squareLittle').eq(2).click(function(){
         $('#leftPage, #homePage, #rightPage').addClass('showRightPage');
         $('#leftPage, #homePage, #rightPage').removeClass('showHomePage');
       });
 
       $('.squareLittle').eq(3).click(function(){
-        $('#homePage').animate({'scrollTop' : 100}, 750);
+        $('#homePage article').animate({'scrollTop' : 100}, 750);
       });
+
+      //---------------------------------------------------HOMEPAGE-ABOUT ME---------------------------------------------------------------
 
 
 
       // SET ELEMENTS RIGHT FOR THE START POSITION OF THE WINDOW //
-      var st = $('#homePage').scrollTop();
+      var st = $('#homePage article').scrollTop();
       var op = 1 - (st * 0.01);
       var scaleDown = 0.9 -(st/1000);
       var scrollTransform = 'rotate(45deg) scale(' + scaleDown  + ')';
@@ -242,7 +261,7 @@ $(document).ready(function() {
 
       var lastScrollTop = 0;
 
-      $("#homePage").on("scroll", function(event){
+      $("#homePage article").on("scroll", function(event){
          var st = $(this).scrollTop();
          // var op = 1 - (st * 0.01);
          var opMin = 1 - (st * 0.02);
@@ -289,18 +308,41 @@ $(document).ready(function() {
            lastScrollTop = st;
          }
 
+         //THIS MAKES IT ALL KINDA CHOPPY, NEEDS A FIX
+         else if( st > 190){
+             $('#menuIcon').css({'opacity' : 1});
+             $('.logobar--bottom').css({'opacity' : 0});
+             $('#whois').css({'marginTop' : 0, 'opacity' :  1});
+         }
+
       });
 
 
 
-      //---------------------------------------------------PORTFOLIO---------------------------------------------------------------
+      //---------------------------------------------------RIGHTPAGE-PORTFOLIO---------------------------------------------------------------
       $('.intro__more').click(function(){
-          var thisTop = $(this).offset().top;
-          $('body, html').animate({'scrollTop' : thisTop}, 750, function(){
+          var thisTop = $(this).offset().top + $('#rightPage article').scrollTop();
+          $(this).parent().next('.popup').removeClass('popup--offScreen');
+          $('#rightPage article').animate({'scrollTop' : thisTop}, 750, function(){
             $('.images__mobile').removeClass('mobile--offScreen').css({'right' :  '10px'});
           });
             // $(window).scrollTop(thisTop);
-          $(this).parent().next('.popup').removeClass('popup--offScreen');
       });
+
+      // $('#rightPage article').scroll(function(){
+      //   var st = $(this).scrollTop();
+      //   var portfolioHeight = ($('.portfolio__intro').height()) + 44 + 25; //it's height plus logobar-height & marginTop of .website
+      //   if(st > lastScrollTop){
+      //     $('.portfolio__intro, .logobar--top').animate({'marginTop' : '-' + portfolioHeight},1000, function(){
+      //       $('#menuIcon').fadeTo(1, 500);
+      //
+      //     });
+      //
+      //   } else{
+      //   }
+      //
+      //   lastScrollTop = st;
+      //
+      // })
 
 });
