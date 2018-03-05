@@ -27,6 +27,12 @@ html,body{
     display: none;
 }
 */
+
+h2{
+  border-top:1px solid black;
+  border-bottom: 1px solid black;
+  text-align: center;
+}
 /*--------------------------------------------MENU ICON BY HTML5 CANVAS--------------------------------------------*/
 
 #menuIcon{
@@ -81,7 +87,7 @@ article {
   width: 100vw;
   height: 100vh;
   /* background: yellow; */
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 
 #homePage {
@@ -94,7 +100,7 @@ article {
   /* background: black; */
   /* background: white; */
   /* overflow: scroll; */
-  color:white;
+  color: white;
   color: black;
   /* overflow: hidden; */
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7db9e8+1,d6d6d6+45,fff832+98 */
@@ -115,6 +121,7 @@ article {
   /* background: red; */
   /* background: rgba(0,0,0,0.1); */
   /* overflow: scroll; */
+  /* overflow: hidden; */
 }
 
 .showRightPage {
@@ -303,8 +310,46 @@ article {
 
 /*-----------------------------------------------------LEFTPAGE----------------------------------------------------------*/
 
-.cv_block{
+/*TODO: ZORGEN DAT LOGOBAR EEN STANDAARD MARGIN-BOTTOM HEEFT ZODAT DE CONTENT OP ZOWEL CV ALS PORTFOLIO OP GELIJKE HOOGTE BEGINT!! Dan hoeven de losse elementen dit niet*/
+
+.cv__block{
+  width: 100%;
   max-width: 649px;
+  height: auto;
+  margin:auto;
+  text-align: center;
+}
+
+.profile{
+  margin-top: 125px;
+  padding: 20px;
+}
+
+.profile ul{
+  display: inline-block;
+  width: 25%;
+  text-align: left;
+}
+
+.profile ul:nth-of-type(2) li{
+  list-style: none;
+  /* border: 1px solid red; */
+}
+
+.profile ul li{
+
+}
+
+.profile ul li > *{
+  display: inline-block;
+}
+
+.progressbar{
+  width:200px;
+  height: 12px;
+  border: 1px solid black;
+  background: repeating-linear-gradient(to right, black 0%, grey 10%);
+  -webkit-transform: skew(-45deg)
 }
 
 
@@ -312,15 +357,20 @@ article {
 /*WHO IS?*/
 
 #whois{
-  opacity: 0;
+  opacity: 1;
   width: 100%;
   height: auto;
   margin-top: 190px;
+  text-align: center;
+
+  box-sizing: border-box;
+  padding: 0 20px;
+
 }
 
 h1, p{
-  padding: 0 20px;
-  text-align: center;
+  /* padding: 0 20px; */
+  /* text-align: center; */
   /* font-weight: lighter; */
 }
 
@@ -338,12 +388,6 @@ h1, p{
   margin: 0 0 36px 0;
   padding: 0;
   /* background: red; */
-}
-
-#skills h2{
-  border-top:1px solid black;
-  border-bottom: 1px solid black;
-  text-align: center;
 }
 
 #skills > ul{
@@ -411,6 +455,19 @@ h1, p{
   display: none;
 }
 
+
+/*additional info*/
+
+#whoisAdd{
+  width: 100%;
+  height: auto;
+  /* margin-top: 190px; */
+  text-align: center;
+
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
 /*CONTACT*/
 
 /*-----------------------------EmailFORM--------------------------------------*/
@@ -430,12 +487,6 @@ h1, p{
   padding: 0;
   /* overflow: scroll; */
   /*-webkit-overflow-scrolling:touch;*/
-}
-
-#contactForm h2{
-  border-top:1px solid black;
-  border-bottom: 1px solid black;
-  text-align: center;
 }
 
 .emailForm {
@@ -640,7 +691,6 @@ h1, p{
 }
 
 .logobar{
-  position: fixed;
   /* top: 0; */
   width: 100%;
   /* height: 100vh; */
@@ -654,6 +704,8 @@ h1, p{
 
 .logobar--top{
   /* display: none; */
+  position: absolute;
+  z-index: 9;
   top: 0;
   border-bottom: 1px solid black;
   padding:7px;
@@ -662,6 +714,8 @@ h1, p{
 
 
 .logobar--bottom{
+  position: fixed;
+
   top: 460px;
   padding: 0;
   /* bottom: 0; */
@@ -684,12 +738,18 @@ h1, p{
 /*---------------------------------------------------------------------------RIGHTPAGE/PORTFOLIO---------------------------------------------------------------------------*/
 
 .portfolio__intro{
-  position: relative;
+  /* display: none; */
+  /* position: relative; */
+  position: fixed;
+  z-index: 8;
+  top:0;
+  background: white;
+
   box-sizing: border-box;
   width: 100%;
   /* height:auto; */
   /* margin-top: 75px; */
-  padding: 20px;
+  padding: 10px;
   /* background: blue; */
   text-align: center;
 
@@ -699,11 +759,22 @@ h1, p{
   align-items: center;
   flex-wrap: wrap;
   box-sizing: border-box; */
-  /* height: 100vh; */
-  height: calc(100vh - 75px);
-  height: -moz-calc(100vh - 75px);
-  height: -webkit-calc(100vh - 75px);
-  height: -o-calc(100vh - 75px);
+  height: 625px;
+  /* height: calc(100vh - 75px); */
+  /* height: -moz-calc(100vh - 75px); */
+  /* height: -webkit-calc(100vh - 75px); */
+  /* height: -o-calc(100vh - 75px); */
+  /* background: red */
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+
+  overflow: scroll;
+}
+
+.portfolio__intro--slideUp{
+  /* -webkit-transform: translateY(-525px); */
+  margin-top: -625px;
+  /* height:0; */
 }
 
 .portfolio__intro_logo{
@@ -717,13 +788,22 @@ h1, p{
   opacity: 0.5;
 }
 
+#rightPage article > .website{
+  margin: 0;
+}
+
+#rightPage article > .website ~.website{
+  /* margin: 0; */
+  margin: 25px 0 25px 0;
+
+}
+
 .website{
   position: relative;
   width: 100%;
   /* max-width:SOMETHING; */
   height: 425px;
   /* background: blue; */
-  margin: 25px 0 25px 0;
   padding: 0;
   /* background: rgba(0,0,0,0.35); */
   /* background: rgba(0,0,0,0.9); */
@@ -749,6 +829,8 @@ h1, p{
   /* margin-top: 25px; */
 
   text-align: center;
+
+  box-sizing: border-box;
 }
 
 .intro__title_h1{
@@ -792,12 +874,13 @@ h1, p{
   position: relative;
   /* margin-top: 0; */
   /* background: rgba(0,0,0,0.6); */
+  box-sizing: border-box;
 }
 
 .image--amik{
   background: url("../portfolio/2 - circus frontflip_slide.jpg") no-repeat;
   background-size: 100%;
-  border: 1px   solid white;
+  border: 1px solid white;
   border-bottom: none;
   margin-top: -20px;
 }
@@ -818,6 +901,7 @@ h1, p{
   position: relative;
  /* top: 175px; */
  /* text-align: center; */
+ box-sizing: border-box;
 }
 
 .text--dark{
@@ -935,14 +1019,16 @@ h1, p{
   margin-top: 25px;
   transition: ease all 1s;
   background: white;
+
+  overflow: hidden;
 }
 
 .popup--offScreen{
   /* display: none; */
-  /* height: 0; */
+  height: 0;
   /* overflow: hidden; */
   /* margin-top: -100%; */
-  /* opacity: 0; */
+  opacity: 0;
 }
 
 .popup--light{
@@ -951,7 +1037,7 @@ h1, p{
 
 .images__desktop{
   position: relative;
-  width: 100vw;
+  width: 100%;
   height:250px;
   margin: 0;
   padding: 0;

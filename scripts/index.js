@@ -1,4 +1,7 @@
 $(document).ready(function() {
+      //JQUERY MOBILE "LOADING"-BUG
+      // (or presumably as submitted by @Pnct)
+      $.mobile.loading().hide();
 
       //MENU ICON BY HTML5 CANVAS
       // var canvas = document.querySelector('canvas'); //$('canvas');
@@ -188,6 +191,7 @@ $(document).ready(function() {
       $('#homePage').on("swipeleft", function() {
         $('#leftPage, #homePage, #rightPage').addClass('showRightPage');
         $('#leftPage, #homePage, #rightPage').removeClass('showHomePage');
+        $('article').css({'overflow' : 'hidden'});
       });
 
       $('#rightPage').on("swiperight", function() {
@@ -221,6 +225,7 @@ $(document).ready(function() {
       $('.squareLittle').eq(2).click(function(){
         $('#leftPage, #homePage, #rightPage').addClass('showRightPage');
         $('#leftPage, #homePage, #rightPage').removeClass('showHomePage');
+        $('article').css({'overflow' : 'hidden'});
       });
 
       $('.squareLittle').eq(3).click(function(){
@@ -261,61 +266,61 @@ $(document).ready(function() {
 
       var lastScrollTop = 0;
 
-      $("#homePage article").on("scroll", function(event){
-         var st = $(this).scrollTop();
-         // var op = 1 - (st * 0.01);
-         var opMin = 1 - (st * 0.02);
-         var opPlus = st * 0.01;
-         var scaleDown = 0.9 -(st/1000);
-         var scrollTransform = 'rotate(45deg) scale(' + scaleDown  + ')';
-         var marginInfo = 190 / st;
-
-
-         // var squareTop = $('.squareLittle').eq(0).offset().top;
-         // var squareBottom = squareTop + $('.squareLittle').eq(0).height(); //300
-         // alert(st);//40 per downarrow, key or click // 728 per click on scrollarea // unknown on drag scrollbar
-         if(st < 190){  //on this point it is out of the window
-
-                  $('.squareLittle:first-child').animate({'top': '-' + st, 'opacity' : opMin}, 0);
-                  $('.squareLittle:nth-child(2)').animate({'left': '-' + st, 'opacity' : opMin}, 0);
-                  $('.squareLittle:nth-child(3)').animate({'right': '-' + st, 'opacity' : opMin}, 0);
-                  $('.squareLittle:nth-child(4)').animate({'bottom': '-' + st, 'opacity' : opMin}, 0);
-
-                  $('#menuIcon').animate({'opacity' : opPlus}, 0);
-                  $('.logobar--bottom').animate({'opacity' : opMin}, 0);
-                  $('#whois').animate({'opacity' : opPlus, 'marginTop' :  marginInfo}, 0);
-
-
-                  // if (st > 25){
-                  //   $('#whois').animate({'opacity' : 1, 'marginTop' :  0}, 1500);
-                  // }
-
-                  if(st < 120){
-                    $('#squareBig').css({'transform' : scrollTransform, '-webkit-transform' : scrollTransform, '-moz-transform' : scrollTransform, '-ms-transform' : scrollTransform, '-o-transform' : scrollTransform});
-                  }
-
-                  if(st < 10){
-                    $('.squareLittle').css({'border' : '1px solid transparent'});
-
-                    $('.squareLittle').eq(1).css({'border-top' : '1px solid white'});
-                    $('.squareLittle').eq(2).css({'border-left' : '1px solid white'});
-                    $('.squareLittle').eq(3).css({'border-top' : '1px solid white', 'border-left' : '1px solid white'});
-
-                  } else{
-                      $('.squareLittle').css({'border' : 'none'});
-                  }
-
-           lastScrollTop = st;
-         }
-
-         //THIS MAKES IT ALL KINDA CHOPPY, NEEDS A FIX
-         else if( st > 190){
-             $('#menuIcon').css({'opacity' : 1});
-             $('.logobar--bottom').css({'opacity' : 0});
-             $('#whois').css({'marginTop' : 0, 'opacity' :  1});
-         }
-
-      });
+      // $("#homePage article").on("scroll", function(event){
+      //    var st = $(this).scrollTop();
+      //    // var op = 1 - (st * 0.01);
+      //    var opMin = 1 - (st * 0.02);
+      //    var opPlus = st * 0.01;
+      //    var scaleDown = 0.9 -(st/1000);
+      //    var scrollTransform = 'rotate(45deg) scale(' + scaleDown  + ')';
+      //    var marginInfo = 190 / st;
+      //
+      //
+      //    // var squareTop = $('.squareLittle').eq(0).offset().top;
+      //    // var squareBottom = squareTop + $('.squareLittle').eq(0).height(); //300
+      //    // alert(st);//40 per downarrow, key or click // 728 per click on scrollarea // unknown on drag scrollbar
+      //    if(st < 190){  //on this point it is out of the window
+      //
+      //             $('.squareLittle:first-child').animate({'top': '-' + st, 'opacity' : opMin}, 0);
+      //             $('.squareLittle:nth-child(2)').animate({'left': '-' + st, 'opacity' : opMin}, 0);
+      //             $('.squareLittle:nth-child(3)').animate({'right': '-' + st, 'opacity' : opMin}, 0);
+      //             $('.squareLittle:nth-child(4)').animate({'bottom': '-' + st, 'opacity' : opMin}, 0);
+      //
+      //             $('#menuIcon').animate({'opacity' : opPlus}, 0);
+      //             $('.logobar--bottom').animate({'opacity' : opMin}, 0);
+      //             $('#whois').animate({'opacity' : opPlus, 'marginTop' :  marginInfo}, 0);
+      //
+      //
+      //             // if (st > 25){
+      //             //   $('#whois').animate({'opacity' : 1, 'marginTop' :  0}, 1500);
+      //             // }
+      //
+      //             if(st < 120){
+      //               $('#squareBig').css({'transform' : scrollTransform, '-webkit-transform' : scrollTransform, '-moz-transform' : scrollTransform, '-ms-transform' : scrollTransform, '-o-transform' : scrollTransform});
+      //             }
+      //
+      //             if(st < 10){
+      //               $('.squareLittle').css({'border' : '1px solid transparent'});
+      //
+      //               $('.squareLittle').eq(1).css({'border-top' : '1px solid white'});
+      //               $('.squareLittle').eq(2).css({'border-left' : '1px solid white'});
+      //               $('.squareLittle').eq(3).css({'border-top' : '1px solid white', 'border-left' : '1px solid white'});
+      //
+      //             } else{
+      //                 $('.squareLittle').css({'border' : 'none'});
+      //             }
+      //
+      //      lastScrollTop = st;
+      //    }
+      //
+      //    //THIS MAKES IT ALL KINDA CHOPPY, NEEDS A FIX
+      //    else if( st > 190){
+      //        $('#menuIcon').css({'opacity' : 1});
+      //        $('.logobar--bottom').css({'opacity' : 0});
+      //        $('#whois').css({'marginTop' : 0, 'opacity' :  1});
+      //    }
+      //
+      // });
 
 
 
@@ -329,20 +334,49 @@ $(document).ready(function() {
             // $(window).scrollTop(thisTop);
       });
 
+      // var lastScrollTopRight = 0;
       // $('#rightPage article').scroll(function(){
-      //   var st = $(this).scrollTop();
-      //   var portfolioHeight = ($('.portfolio__intro').height()) + 44 + 25; //it's height plus logobar-height & marginTop of .website
-      //   if(st > lastScrollTop){
-      //     $('.portfolio__intro, .logobar--top').animate({'marginTop' : '-' + portfolioHeight},1000, function(){
-      //       $('#menuIcon').fadeTo(1, 500);
-      //
-      //     });
-      //
-      //   } else{
-      //   }
-      //
-      //   lastScrollTop = st;
-      //
-      // })
+        // var st = $(this).scrollTop();
+        // var portfolioHeight = ($('.portfolio__intro').height()) + 44 ; //it's height plus logobar-height & marginTop of .website
+        // if(st > lastScrollTopRight){
+        //   $('.portfolio__intro, .logobar--top').animate({'marginTop' : '-' + portfolioHeight},1000, function(){
+        //     $('#menuIcon').fadeTo(1, 500);
+        //
+        //   });
+        //
+        // } else{
+        // }
+        //
+        // lastScrollTopRight = st;
+        // var st = $(this).scrollTop();
+        // var op = 1 - (st * 0.01);
+
+
+        // var squareTop = $('.squareLittle').eq(0).offset().top;
+        // var squareBottom = squareTop + $('.squareLittle').eq(0).height(); //300
+        // alert(st);//40 per downarrow, key or click // 728 per click on scrollarea // unknown on drag scrollbar
+        // if(st < 190){  //on this point it is out of the window
+
+            // $('.portfolio__intro, .logobar--top').animate({'marginTop' : '-' + st},10)
+
+        // }
+
+        // $('.portfolio__intro, .logobar--top').animate({'marginTop' : '-' + portfolioHeight},1000);
+        // $('#rightPage article').scrollTop(0);
+
+        // $('.portfolio__intro').addClass('portfolio__intro--slideUp');
+        // $('.portfolio__intro p').fadeOut();
+        // $('.logobar--top').hide();
+
+
+
+
+      // });
+
+      $('.portfolio__intro').scroll(function(){
+          $(this).addClass('portfolio__intro--slideUp');
+          $('#rightPage .logobar--top').hide();
+          $('#rightPage article').css({'overflow' : 'scroll'})
+      });
 
 });
